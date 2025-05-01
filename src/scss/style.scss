@@ -1,0 +1,291 @@
+
+:root {
+    --font-family: "Poppins", sans-serif;
+    --second-family: "Inter", sans-serif;
+    --third-family: "Manrope", sans-serif;
+    --font3: "Outfit", sans-serif;
+    --font4: "DM Sans", sans-serif;
+    --font5: "Public Sans", sans-serif;
+    --font6: "Roboto", sans-serif;
+    --font7: "Urbanist", sans-serif;
+    --font8: "Plus Jakarta Sans", sans-serif;
+  }
+.header__container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 57px;
+}
+.header {
+    margin-top: 45px;
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 57px;
+    &__logo {
+        a {
+          img {
+          }
+          &:hover {}
+          &:active {}
+          &:focus {}
+        }
+      }
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 53px;
+      li {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 150%;
+        text-transform: uppercase;
+        a {
+        color: #606060;
+        &:hover {
+            color: #000;
+        }
+        &:active {}
+        &:focus {}
+        }
+      }
+    }
+  }
+  .header__search {
+    margin: 0 0 0 120px;
+  
+    input {
+      font-family: var(--second-family);
+      font-size: 16px;
+      line-height: 150%;
+      color: #b0b0b0; // Сірий текст
+      padding: 16px 24px;
+      width: 100%; // Адаптивна ширина
+      border: none;
+      border-radius: 16px;
+      background: #f5f5f5; // Світло-сірий фон
+      outline: none;
+  
+      &::placeholder {
+        color: #b0b0b0; // Колір тексту для placeholder
+      }
+  
+      &:focus {
+        background: #e0e0e0; // Трохи темніший фон при фокусі
+      }
+    }
+  
+    .header__search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 57px;
+      height: 57px;
+      background: #141416; // Темний фон
+      border-radius: 50%; // Кругла кнопка
+      color: #fff; // Білий колір іконки
+      cursor: pointer;
+      border: none;
+  
+      &:hover {
+        background: #282828; // Темніший фон при наведенні
+      }
+  
+      &:active {
+        background: #000; // Чорний фон при натисканні
+      }
+    }
+  }
+    .header__wallet {
+      .header__wallet-button {
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 16px;
+        padding: 16px 24px;
+        width: 199px;
+        height: 57px;
+        background: #141416;
+        &:hover {
+            background-color: #282828;
+        }
+        &:active {
+
+        }
+        &:focus {
+
+        }
+      }
+    }
+}
+main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+  .sidebar {
+    margin-top: 110px;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      max-width: 567px;
+      .sidebar__text {
+        &::before {
+          content: "";
+          display: block;
+          width: 195px;
+          height: 1px;
+          background-color: #e0e0e0;
+          margin-bottom: 24px;
+        }
+        &__title {
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 75px;
+          line-height: 120%;
+          letter-spacing: -0.04em;
+          text-transform: capitalize;
+          color: #141416;
+        }
+        &__main {
+          margin-top: 16px;
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 156%;
+          text-align: justify;
+          color: #676767;
+        }
+        span {
+          font-weight: 600;
+          color: #141416;
+        }
+      }
+      .sidebar__buttons {
+        margin-top: 45px;
+        display: flex;
+        flex-direction: row;
+        gap: 23px;
+          &__explore-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 12px;
+            width: 179px;
+            height: 60px;
+            background: #000;
+            &:hover {}
+            &:active {}
+            &:focus {}
+          }
+          &__create-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 12px;
+            width: 138px;
+            height: 60px;
+            &:hover {}
+            &:active {}
+            &:focus {}
+          }
+        }
+      .sidebar__stats {
+        display: flex;
+        flex-direction: row;
+        gap: 65px;
+        margin-top: 82px;
+        &__art__works {
+          display: flex;
+          flex-direction: column;
+          &__number {font-family: var(--font5);
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 125%;
+            color: #141416;
+          }
+          &__title {font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 150%;
+            color: #848586;
+          }
+        }
+        &__creators {
+          &__number {font-family: var(--font5);
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 125%;
+            color: #141416;
+          }
+          &__title {font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 150%;
+            color: #848586;
+          }
+        }
+        &__collections {
+          &__number {font-family: var(--font5);
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 125%;
+            color: #141416;
+          }
+          &__title {font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 150%;
+            color: #848586;
+          }
+        }
+      }
+    }
+  }
+  
+  .aside {
+    max-width: 727px;
+    .about__container {
+      display: flex;
+      img {
+        object-fit: contain;
+      }
+      .about__nft {
+      }
+      .about__box {
+        display: flex;
+        flex-direction: column;
+        &__arrow {
+          margin-top: 260px;
+          max-width: 116px;
+        }
+        &__nft {
+          max-width: 320px;
+          height: auto;
+        }
+      }
+    }
+  }
