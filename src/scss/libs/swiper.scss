@@ -20,6 +20,7 @@
 	--swiper-theme-color: #007aff;
 }
 .swiper {
+	height: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
@@ -56,6 +57,7 @@
 	height: 100%;
 	position: relative;
 	transition-property: transform;
+	color: #000;
 }
 .swiper-slide-invisible-blank {
 	visibility: hidden;
