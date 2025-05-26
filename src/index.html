@@ -69,6 +69,7 @@
             </aside>
         </main>
         <div class="weekly">
+            <h2 class="weekly__title">Weekly - Top NFT</h2>
             <!-- Slider main container -->
             <div class="swiper">
               <!-- Additional required wrapper -->
@@ -193,16 +194,65 @@
             <div class="swiper-pagination"></div>
           
               <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
+            <div class="swiper-button">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
               <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <!-- <div class="swiper-scrollbar"></div> -->
             </div>
             <div class="weekly__recent__viewed">
-                <h2 class="weekly__recent__viewed__title">Weekly Featured</h2>
-                <p class="weekly__recent__viewed__main">Discover, Create and Sell NFTs On Our NFT Marketplace With Over Thousands Of NFTs And Get a $20 bonus.</p>
+                <h2 class="weekly__recent__viewed__title">Recent Viewed</h2>
+                <div class="weekly__recent__viewed__sellers">
+                    <div class="weekly__recent__viewed__seller">
+                        <div class="weekly__recent__viewed__seller__aside">
+                            <img class="weekly__recent__viewed__seller__aside__img" src="img/nft3.png" alt="">
+                            <div class="weekly__recent__viewed__seller__aside__text">    
+                                <h2 class="weekly__recent__viewed__seller__aside__text__name">Alex Ca.</h2>
+                                <p class="weekly__recent__viewed__seller__aside__text__username">Alexy</p>
+                            </div>
+                        </div>
+                        <div class="weekly__recent__viewed__seller__article">
+                            <p class="weekly__recent__viewed__seller__article__number">8,456</p>
+                            <p class="weekly__recent__viewed__seller__article__percent">+23,00%</p>
+                        </div>
+                    </div>
+                    <div class="weekly__recent__viewed__seller">
+                        <div class="weekly__recent__viewed__seller__aside">
+                            <img class="weekly__recent__viewed__seller__aside__img" src="img/nft6.png" alt="">
+                            <div class="weekly__recent__viewed__seller__aside__text">
+                                <h2 class="weekly__recent__viewed__seller__aside__text__name">Juliya S.</h2>
+                                <p class="weekly__recent__viewed__seller__aside__text__username">JuliyaS</p>
+                            </div>
+                        </div>
+                        <div class="weekly__recent__viewed__seller__article">
+                            <p class="weekly__recent__viewed__seller__article__number">5,327</p>
+                            <p class="weekly__recent__viewed__seller__article__percent weekly__recent__viewed__seller__article__percent_red">-32,01%</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="top-collection">
+            <h1 class="top-collection__title">Top Collection</h1>
+            <table class="top-collection__table" id="productTable">
+              <thead>
+                <tr>
+                  <th class="top-collection__table__title">Collection</th>
+                  <th class="top-collection__table__title">Volume</th>
+                  <th class="top-collection__table__title">24h %</th>
+                  <th class="top-collection__table__title">Floor Price</th>
+                  <th class="top-collection__table__title">Owners</th>
+                  <th class="top-collection__table__title">Items</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr><td><img src="img/nft3.png" class="top-collection__table__img" alt=""><div class="top-collection__table__name"><p class="top-collection__table__name__title">Alex Ca.</p><p class="top-collection__table__name__description">By Alex</p></div></td><td class="top-collection__table__volume">8,456</td><td class="top-collection__table__percent">+ 27.78%</td><td class="top-collection__table__floor__price">3,5</td><td class="top-collection__table__owners">2,2K</td><td class="top-collection__table__items">500</td></tr>
+                  <tr><td><img src="img/nft6.png" class="top-collection__table__img" alt=""><div class="top-collection__table__name"><p class="top-collection__table__name__title">Alex Ca.</p><p class="top-collection__table__name__description">By Alex</p></div></td><td class="top-collection__table__volume">4,780</td><td class="top-collection__table__percent">+ 27.78%</td><td class="top-collection__table__floor__price">7,9</td><td class="top-collection__table__owners">3,4K</td><td class="top-collection__table__items">900</td></tr>
+                  <tr><td><img src="img/nft3.png" class="top-collection__table__img" alt=""><div class="top-collection__table__name"><p class="top-collection__table__name__title">Alex Ca.</p><p class="top-collection__table__name__description">By Alex</p></div></td><td class="top-collection__table__volume">8,456</td><td class="top-collection__table__percent">+ 27.78%</td><td class="top-collection__table__floor__price">3,5</td><td class="top-collection__table__owners">2,2K</td><td class="top-collection__table__items">500</td></tr>
+                  <tr><td><img src="img/nft6.png" class="top-collection__table__img" alt=""><div class="top-collection__table__name"><p class="top-collection__table__name__title">Alex Ca.</p><p class="top-collection__table__name__description">By Alex</p></div></td><td class="top-collection__table__volume">4,780</td><td class="top-collection__table__percent">+ 27.78%</td><td class="top-collection__table__floor__price">7,9</td><td class="top-collection__table__owners">3,4K</td><td class="top-collection__table__items">900</td></tr>
+              </tbody>
+            </table>
         </div>
     </div>
 <script src="js/app.min.js"></script>

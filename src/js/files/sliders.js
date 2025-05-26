@@ -45,6 +45,7 @@ function initSliders() {
 			//touchRatio: 0,
 			//simulateTouch: false,
 			loop: true,
+			// centeredSlides: true,
 			//preloadImages: false,
 			lazy: true,
 			// lazyPreloadPrevNext: 2,
