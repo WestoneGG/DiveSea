@@ -69,3 +69,47 @@ document.addEventListener("DOMContentLoaded", () => {
     th.addEventListener("click", () => sortTable(index));
   });
 });
+
+document.querySelectorAll('.just-unleash__aside__best__sellers__main__seller__follow__button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('_active'); // Додає або видаляє клас _active
+
+    // Змінюємо текст кнопки
+    if (button.classList.contains('_active')) {
+      button.innerText = 'Unfollow'; // Текст при активному стані
+    } else {
+      button.innerText = 'Follow'; // Текст при неактивному стані
+    }
+  });
+});
+
+function startTimer(duration, display) {
+  let timer = duration; // Початковий час у секундах
+  let hours, minutes, seconds;
+
+  const interval = setInterval(() => {
+    hours = Math.floor(timer / 3600);
+    minutes = Math.floor((timer % 3600) / 60);
+    seconds = timer % 60;
+
+    // Форматуємо час у форматі HHh MMm SSs
+    display.textContent = `${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+
+    if (timer > 0) {
+      timer--; // Зменшуємо час
+    } else {
+      clearInterval(interval); // Зупиняємо таймер, коли час закінчується
+      display.textContent = "00h 00m 00s"; // Таймер завершився
+    }
+  }, 1000); // Оновлення кожну секунду
+}
+
+// Запуск таймера для кожної картки
+document.addEventListener("DOMContentLoaded", () => {
+  const timerDisplays = document.querySelectorAll('.explore-marketplace__card__timer'); // Вибираємо всі таймери
+  const duration = 25752;
+
+  timerDisplays.forEach(timerDisplay => {
+    startTimer(duration, timerDisplay); // Запускаємо таймер для кожного елемента
+  });
+});
