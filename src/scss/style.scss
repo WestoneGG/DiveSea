@@ -171,12 +171,14 @@ main{
         }
       }
       .sidebar__buttons {
+        box-sizing: content-box;
         margin-top: 45px;
         max-width: 340px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
+        padding: 0 0 0 15px;
           &__explore-button {
             display: flex;
             align-items: center;
@@ -215,10 +217,12 @@ main{
           }
         }
       .sidebar__stats {
+        box-sizing: content-box;
         display: flex;
         flex-direction: row;
         gap: 65px;
         margin-top: 82px;
+        padding-left: 15px;
         &__art__works {
           display: flex;
           flex-direction: column;
@@ -1493,6 +1497,212 @@ main{
           img {
             fill: #535353;
           }
+        }
+      }
+    }
+  }
+  
+
+  .product-detail {
+    &__container {
+      padding: 25px;
+    }
+    &__back {
+      margin: 80px 0 55px;
+      &__button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 37px;
+        fill: #e6e8ec;
+        &:hover {}
+        &:active {}
+        &:focus {}
+        &::before {
+          content: url('../img/backicon.svg');
+          width: 24px;
+          height: 24px;
+          margin-right: 40px;
+        }
+        &__title {
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 31px;
+          line-height: 89%;
+          color: #23262f;
+          margin-top: 12px;
+        }
+      }
+    }
+    &__main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 17px;
+      box-shadow: 12px 12px 43px 0 rgba(0, 0, 0, 0.12);
+      background: #fafafa;
+      padding: 27px;
+      &__aside {
+        &__img {
+          width: 564px;
+          height: 560px;
+          border-radius: 17px;
+        }
+      }
+      &__article {
+        &__title {
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 51px;
+          line-height: 62%;
+          color: #292b39;
+          margin-bottom: 30px;
+        }
+        &__text {
+          max-width: 365px;
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 153%;
+          color: rgba(136, 136, 136, 0.7);
+          margin-bottom: 70px;
+        }
+        &__owners {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 64px;
+          &__creator {
+            display: flex;
+            flex-direction: row;
+            &__img {
+              margin-right: 17px;
+            }
+            &__text {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              &__description {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 17px;
+                color: #8d8d8d;
+              }
+              &__name {
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 153%;
+                color: #000;
+              }
+            }
+          }
+          &__owner {
+            display: flex;
+            flex-direction: row;
+            &__img {
+              margin-right: 17px;
+            }
+            &__text {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              &__description {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 17px;
+                color: #8d8d8d;
+              }
+              &__name {
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 153%;
+                color: #000;
+              }
+            }
+          }
+        }
+        &__bid__info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 55px;
+          &__price {
+            &__text {
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 17px;
+              line-height: 123%;
+              color: #8c8c8c;
+              margin-bottom: 7px;
+            }
+            &__value {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              font-family: var(--font-family);
+              font-weight: 600;
+              font-size: 32px;
+              color: #292b39;
+              &::before {
+                content: "";
+                width: 24px;
+                height: 37px;
+                margin-right: 9px;
+                background: url("../img/eth.svg") no-repeat center;
+                display: flex;
+              }
+            }
+          }
+          &__end__in {
+            &__text {
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 17px;
+              line-height: 123%;
+              color: #8c8c8c;
+              text-align: right;
+              margin-bottom: 8px;
+            }
+            &__date {
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 19px;
+              line-height: 157%;
+              text-align: right;
+              color: #000;
+            }
+          }
+        }
+        &__button {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          border-radius: 14px;
+          height: 78px;
+          background: #141416;
+          &__text {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 153%;
+            color: #fff;
+            &::before {
+              content: url('../img/wallet.svg');
+              margin-right: 12px;
+            }
+          }
+          &:hover {}
+          &:active {}
+          &:focus {}
         }
       }
     }
