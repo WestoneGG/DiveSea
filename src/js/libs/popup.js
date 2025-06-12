@@ -25,7 +25,7 @@ class Popup {
 			// Изменение классов
 			classes: {
 				popup: 'popup',
-				// popupWrapper: 'popup__wrapper',
+				popupWrapper: 'popup__wrapper',
 				popupContent: 'popup__content',
 				popupActive: 'popup_show', // Добавляется для попапа, когда он открывается
 				bodyActive: 'popup-show', // Добавляется для боди, когда попап открыт

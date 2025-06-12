@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="wrapper">
+        @@include('html/_popup.htm')
         @@include('header.htm')
         <div class="product-detail">
             <div class="product-detail__container">
@@ -48,7 +49,7 @@
                                 <p class="product-detail__main__article__bid__info__end__in__date">Jun 17, 2023 at 05:08</p>
                             </div>
                         </div>
-                        <button class="product-detail__main__article__button"><span class="product-detail__main__article__button__text">Place Bid</span></button>
+                        <button data-popup="#popup" type="button" class="product-detail__main__article__button"><span class="product-detail__main__article__button__text">Place Bid</span></button>
                     </article>
                 </div>
             </div>
