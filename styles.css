@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.currency-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.currency-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.currency-button .arrow {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.input-field {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    color: #000;
+}
+
+.input-field::placeholder {
+    color: #ccc;
+}
+
+.currency-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100px;
+    display: none;
+}
+
+.currency-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.currency-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.currency-list.hidden {
+    display: none;
+}
+
+.currency-list.visible {
+    display: block;
+}
