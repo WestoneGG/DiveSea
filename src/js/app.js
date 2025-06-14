@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// 
+// Випадаюче меню для вибору валюти в попапі "Your Bid"
 document.addEventListener('DOMContentLoaded', () => {
   const currencyButton = document.querySelector('.popup__content__your__bid__currency__button');
   const currencyList = document.querySelector('.popup__content__your__bid__currency__list');
