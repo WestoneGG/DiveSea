@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//
+
 document.querySelectorAll('.just-unleash__aside__best__sellers__main__seller__follow__button').forEach(button => {
   button.addEventListener('click', () => {
     button.classList.toggle('_active'); // Додає або видаляє клас _active
@@ -141,5 +143,62 @@ document.addEventListener('DOMContentLoaded', () => {
           currencyList.classList.add('hidden');
           currencyList.classList.remove('visible');
       }
+  });
+});
+
+// stats table
+
+function sortStatsTable(columnIndex) {
+  const table = document.getElementById("statsTable");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+
+  sortDirection[columnIndex] = !sortDirection[columnIndex];
+
+  // Очищення класів сортування
+  table.querySelectorAll("th").forEach(th => th.classList.remove("sort-asc", "sort-desc"));
+  const th = table.querySelectorAll("th")[columnIndex];
+  th.classList.add(sortDirection[columnIndex] ? "sort-asc" : "sort-desc");
+
+  rows.sort((a, b) => {
+    let valA, valB;
+
+    if (columnIndex === 0) {
+      // Витягуємо текст з p.leaderboard__table__name__title
+      valA = a.cells[0].querySelector('.leaderboard__table__name__title').innerText.trim();
+      valB = b.cells[0].querySelector('.leaderboard__table__name__title').innerText.trim();
+    } else {
+      valA = a.cells[columnIndex].innerText.trim();
+      valB = b.cells[columnIndex].innerText.trim();
+    }
+
+    // Пробуємо перетворити в число
+    const numA = normalizeNumber(valA);
+    const numB = normalizeNumber(valB);
+    const isNumeric = !isNaN(numA) && !isNaN(numB);
+
+    if (isNumeric) {
+      valA = numA;
+      valB = numB;
+    } else {
+      valA = valA.toLowerCase();
+      valB = valB.toLowerCase();
+    }
+
+    if (valA < valB) return sortDirection[columnIndex] ? -1 : 1;
+    if (valA > valB) return sortDirection[columnIndex] ? 1 : -1;
+    return 0;
+  });
+
+  // Перемальовування рядків
+  tbody.innerHTML = "";
+  rows.forEach(row => tbody.appendChild(row));
+}
+
+// Прив'язка подій після завантаження DOM
+document.addEventListener("DOMContentLoaded", () => {
+  const statsHeaders = document.querySelectorAll("#statsTable th");
+  statsHeaders.forEach((th, index) => {
+    th.addEventListener("click", () => sortStatsTable(index));
   });
 });

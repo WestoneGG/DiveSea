@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+</head>
+<body>
+<div class="wrapper">
+    @@include('header.htm')
+    <div class="leaderboard">
+        <div class="leaderboard__container">
+            <h1 class="leaderboard__title">Leaderboard NFTs</h1>
+            <table class="leaderboard__table" id="statsTable">
+                <thead>
+                    <tr>
+                        <th class="leaderboard__table__title sort-asc">Collection</th>
+                        <th class="leaderboard__table__title sort-desc">Volume</th>
+                        <th class="leaderboard__table__title">24h %</th>
+                        <th class="leaderboard__table__title">Floor Price</th>
+                        <th class="leaderboard__table__title">Owners</th>
+                        <th class="leaderboard__table__title">Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><img src="img/nft3.png" class="leaderboard__table__img" alt=""><div class="leaderboard__table__name"><p class="leaderboard__table__name__title">Alex Ca.</p><p class="leaderboard__table__name__description">By Alex</p></div></td><td class="leaderboard__table__volume">8,456</td><td class="leaderboard__table__percent">+ 27.78%</td><td class="leaderboard__table__floor__price">3,5</td><td class="leaderboard__table__owners">2,2K</td><td class="leaderboard__table__items">500</td></tr>
+                    <tr><td><img src="img/nft6.png" class="leaderboard__table__img" alt=""><div class="leaderboard__table__name"><p class="leaderboard__table__name__title">Alex Ca.</p><p class="leaderboard__table__name__description">By Alex</p></div></td><td class="leaderboard__table__volume">4,780</td><td class="leaderboard__table__percent">+ 27.78%</td><td class="leaderboard__table__floor__price">7,9</td><td class="leaderboard__table__owners">3,4K</td><td class="leaderboard__table__items">900</td></tr>
+                    <tr><td><img src="img/nft3.png" class="leaderboard__table__img" alt=""><div class="leaderboard__table__name"><p class="leaderboard__table__name__title">Alex Ca.</p><p class="leaderboard__table__name__description">By Alex</p></div></td><td class="leaderboard__table__volume">8,456</td><td class="leaderboard__table__percent">+ 27.78%</td><td class="leaderboard__table__floor__price">3,5</td><td class="leaderboard__table__owners">2,2K</td><td class="leaderboard__table__items">500</td></tr>
+                    <tr><td><img src="img/nft6.png" class="leaderboard__table__img" alt=""><div class="leaderboard__table__name"><p class="leaderboard__table__name__title">Alex Ca.</p><p class="leaderboard__table__name__description">By Alex</p></div></td><td class="leaderboard__table__volume">4,780</td><td class="leaderboard__table__percent">+ 27.78%</td><td class="leaderboard__table__floor__price">7,9</td><td class="leaderboard__table__owners">3,4K</td><td class="leaderboard__table__items">900</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @@include('footer.htm')
+</div>
+<script src="js/app.min.js"></script>
+</body>
+</html>
