@@ -11,36 +11,63 @@
     --font7: "Urbanist", sans-serif;
     --font8: "Plus Jakarta Sans", sans-serif;
   }
-.header__container {
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 57px;
-}
+
 .header {
-    margin-top: 45px;
+  margin-top: 45px;
+  @media (max-width: 1024px) {
+    margin-top: 15px; // Змінюємо відступ для мобільних пристроїв
+    
+  }
+    &__container {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 57px;
+
+    }
   &__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 57px;
+    @media (max-width: 1024px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      justify-content: space-between;
+      max-width: 1024px;
+      width: 100%;
+      padding: 0 20px;
+    }
     &__logo {
         a {
+          display: inline-block;
           img {
+            max-width: 100%;
+            height: auto;
           }
           &:hover {}
           &:active {}
           &:focus {}
         }
       }
-    ul {
+      &__menu {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 53px;
+        @media (max-width: 1024px) {
+          display: none;
+        }
+        &__connect {
+          display: none;
+          @media (max-width: 1024px) {
+            display: flex;
+          }
+        }
       li {
         font-family: var(--second-family);
         font-weight: 500;
@@ -48,18 +75,86 @@
         line-height: 150%;
         text-transform: uppercase;
         a {
-        color: #606060;
-        &:hover {
-            color: #000;
-        }
-        &:active {}
-        &:focus {}
+          color: #606060;
+          &:hover {
+              color: #000;
+          }
+          &:active {}
+          &:focus {}
         }
       }
     }
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-top: 3px;
+    @media (max-width: 1024px) {
+        display: flex;
+    }
+
+    span {
+        // display: none;
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
   }
+
+
+  &__menu {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+
+        &.active {
+            transform: translateX(100%);
+        }
+
+        &.closing {
+            transform: translateX(-100%);
+        }
+    }
+  }
+}
+
   .header__search {
     flex-shrink: 0;
+    @media (max-width: 1024px) {
+      display: none; // Сховати на мобільних пристроях
+      
+    }
     input {
       font-family: var(--second-family);
       font-size: 16px;
@@ -78,6 +173,7 @@
   
       &:focus {
         background: #e0e0e0; // Трохи темніший фон при фокусі
+        transition: all 0.2s ease-in-out; // Плавний перехід
       }
     }
     .header__search-button {
@@ -102,6 +198,10 @@
     }
   }
   .header__wallet {
+    @media (max-width: 1024px) {
+      display: none; // Сховати на мобільних пристроях
+      
+    }
     .header__wallet-button {
       display: flex;
       font-family: var(--second-family);
@@ -131,6 +231,7 @@ main{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 50px;
 }
   .sidebar {
     margin-top: 110px;
@@ -261,7 +362,7 @@ main{
             line-height: 125%;
             color: #141416;
           }
-          &__title {font-family: var(--second-family);
+          &__title {font-family: var (--second-family);
             font-weight: 500;
             font-size: 12px;
             line-height: 150%;
@@ -271,25 +372,33 @@ main{
       }
     }
   }
-  
   .aside {
     max-width: 727px;
+    width: 100%;
     .about__container {
       display: flex;
       img {
+        max-width: 100%;
+        height: auto;
         object-fit: contain;
       }
       .about__nft {
+        max-width: 100%;
+        height: auto;
       }
       .about__box {
         display: flex;
         flex-direction: column;
         &__arrow {
           margin-top: 260px;
-          max-width: 116px;
+          max-width: 80px;
+          width: 100%;
+          height: auto;
         }
         &__nft {
-          max-width: 320px;
+          max-width: 180px;
+          min-width: 105px;
+          width: 100%;
           height: auto;
         }
       }
@@ -311,8 +420,10 @@ main{
       color: #c5c5c5;
       text-align: center;
       margin-top: 70px;
+      line-height: 115%;
     }
     .swiper {
+      margin-bottom: 15px;
       .swiper-wrapper {
         min-width: 0;
         margin: 100px 0;
@@ -480,14 +591,26 @@ main{
     position: absolute;
     top: 40em;
     right: 5em;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid #edf2f7;
-    border-radius: 16px;
-    width: 365px;
-    box-shadow: 10px 10px 50px 0 rgba(20, 20, 22, 0.1);
-    background: #fff;
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: relative;
+      top: 0;
+      width: 100%;
+      right: 0;
+      margin-bottom: 50px;
+    }
+    &__box {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border: 1px solid #edf2f7;
+      border-radius: 16px;
+      width: 365px;
+      box-shadow: 10px 10px 50px 0 rgba(20, 20, 22, 0.1);
+      background: #fff;
+    }
     &__title {
       font-family: var(--font-family);
       font-weight: 600;
@@ -586,8 +709,39 @@ main{
       max-width: 1250px;
       // min-width: 819px;
       // width: 100%;
-      overflow-x: scroll;
+      // overflow-x: scroll;
       // table-layout: fixed;
+      @media screen and (max-width: 623px) {
+        width: 100%;
+        overflow-x: auto;
+        
+      }
+      &__volume {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &::before {
+          content: url('../img/eth.svg');
+          display: flex;
+          width: 23px;
+          height: 19px;
+          margin-bottom: 12px;
+        }
+      }
+      &__floor__price {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &::before {
+          content: url('../img/eth.svg');
+          display: flex;
+          width: 27px;
+          height: 23px;
+          margin-bottom: 12px;
+        }
+      }
       thead {
         display: flex;
         justify-content: space-between;
@@ -631,6 +785,9 @@ main{
           align-items: center;
           border-bottom: 1px solid #ccc;
           gap: 30px;
+          @media (max-width: 623px) {
+            border: 0;
+          }
         }
         td {
           font-family: var(--font-family);
@@ -708,7 +865,7 @@ main{
       }
     }
     &__explore__all{
-      margin-right: 90px;
+      margin-right: 5%;
       &__button {
         display: flex;
         align-items: center;
@@ -779,6 +936,7 @@ main{
         border-radius: 13px;
         padding: 27px;
         height: 56px;
+        cursor: pointer;
         &__button {
           display: flex;
           align-items: center;
@@ -789,6 +947,7 @@ main{
           letter-spacing: 0.01em;
           color: #1a202c;
           background-color: #f9f9f9;
+          cursor: pointer;
           &__img {
             display: flex;
             width: 24px;
@@ -918,7 +1077,7 @@ main{
       }
     }
     &__explore__all{
-      margin-right: 90px;
+      margin-right: 5%;
       &__button {
         display: flex;
         align-items: center;
@@ -949,10 +1108,16 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 941px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .just-unleash {padding: 0 10px;
-    margin: 72px 0 0 0;
+    margin: 72px 80px 0 0;
     &::before {
       content: "";
       display: block;
@@ -965,6 +1130,7 @@ main{
     }
 
       &__text {
+
         &__title {font-family: var(--font-family);
           font-weight: 600;
           font-size: 45px;
@@ -1052,6 +1218,9 @@ main{
       align-items: center;
       justify-content: center;
       margin-top: 45px;
+      @media (max-width: 941px) {
+        display: none; // Сховати на мобільних пристроях
+      }
       &__best__sellers {
         display: flex;
         flex-direction: column;
@@ -1127,6 +1296,7 @@ main{
                 text-align: center;
                 color: #23262f;
                 background-color: #fff;
+                cursor: pointer;
                 &:hover {}
                 &:active {}
                 &:focus {}
@@ -1227,7 +1397,7 @@ main{
                 }
               }
               &__percent {
-                font-family: var(--font-family);
+                font-family: var (--font-family);
                 font-weight: 400;
                 font-size: 13px;
                 line-height: 150%;
@@ -1323,8 +1493,23 @@ main{
         border-radius: 30px;
         background: #141416;
         padding: 36px;
+        @media (max-width: 961px) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          
+        }
         &__aside {
           padding: 0 0 0 66px;
+          @media (max-width: 961px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            text-align: center;
+          }
           &__text {
             margin-top: 25px;
             &__title {
@@ -1398,6 +1583,10 @@ main{
           align-items: center;
           justify-content: center;
           position: relative;
+          @media (max-width: 961px) {
+            display: none; // Сховати на мобільних пристроях
+            
+          }
           &__main {
             // position: absolute;
             z-index: 1;
@@ -1426,6 +1615,11 @@ main{
       align-items: center;
       gap: 30px;
       margin-top: 10%;
+      @media (max-width: 638px) {
+    flex-direction: column;
+    align-items: center;
+      justify-content: center;
+      }
       &__img {
         &__logo {
         }
@@ -1447,6 +1641,12 @@ main{
         align-items: center;
         max-width: 635px;
         gap: 50px;
+        @media (max-width: 638px) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          
+        }
         &__link {
           display: flex;
           font-family: var(--second-family);
@@ -1491,6 +1691,9 @@ main{
         justify-content: space-between;
         align-items: center;
         gap: 54px;
+        @media (max-width: 638px) {
+          gap: 20px;
+        }
         &__link {
           &:hover {}
           &:active {}
@@ -2436,8 +2639,11 @@ main{
       max-width: 1250px;
       // min-width: 819px;
       // width: 100%;
-      overflow-x: scroll;
       // table-layout: fixed;
+      @media (max-width: 961px) {
+        width: 100%;
+        overflow-x: auto;
+      }
       thead {
         display: flex;
         justify-content: space-between;
@@ -2481,9 +2687,12 @@ main{
           align-items: center;
           border-bottom: 1px solid #ccc;
           gap: 30px;
+          @media (max-width: 961px) {
+            border: 0;
+          }
         }
         td {
-          font-family: var(--font-family);
+          font-family: var (--font-family);
           font-weight: 500;
           font-size: 28px;
           line-height: 140%;
@@ -2558,7 +2767,7 @@ main{
       }
     }
     &__explore__all{
-      margin-right: 90px;
+      margin-right: 5%;
       &__button {
         display: flex;
         align-items: center;

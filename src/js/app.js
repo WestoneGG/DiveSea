@@ -202,3 +202,34 @@ document.addEventListener("DOMContentLoaded", () => {
     th.addEventListener("click", () => sortStatsTable(index));
   });
 });
+
+// menu-burger 
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.header__nav__burger');
+    const menu = document.querySelector('.header__nav__menu');
+
+    burger.addEventListener('click', () => {
+        if (menu.classList.contains('active')) {
+            menu.classList.add('closing');
+            setTimeout(() => {
+                menu.classList.remove('active', 'closing');
+            }, 300); // Час анімації має збігатися зі стилями
+        } else {
+            menu.classList.add('active');
+        }
+        burger.classList.toggle('active');
+    });
+
+    // Закриття меню при кліку поза ним
+    document.addEventListener('click', (event) => {
+        if (!burger.contains(event.target) && !menu.contains(event.target)) {
+            if (menu.classList.contains('active')) {
+                menu.classList.add('closing');
+                setTimeout(() => {
+                    menu.classList.remove('active', 'closing');
+                }, 300);
+            }
+            burger.classList.remove('active');
+        }
+    });
+});

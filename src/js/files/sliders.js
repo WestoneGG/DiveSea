@@ -98,7 +98,7 @@ function initSliders() {
 					slidesPerView: 3,
 					spaceBetween: 20,
 				},
-				1268: {
+				1460: {
 					slidesPerView: 5,
 					spaceBetween: 30,
 				},
