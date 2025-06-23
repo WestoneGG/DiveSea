@@ -295,7 +295,10 @@ main{
             width: 179px;
             height: 60px;
             background: #000;
-            &:hover {}
+            &:hover {
+              background-color: #282828;
+              transition: all 0.2s ease-in-out;
+            }
             &:active {}
             &:focus {}
           }
@@ -512,7 +515,10 @@ main{
               background: #141416;
               text-align: center;
               align-content: center;
-              &:hover {}
+              &:hover {
+                background-color: #535353;
+                transition: all 0.2s ease-in-out;
+              }
               &:active {}
               &:focus {}
             }
@@ -591,7 +597,7 @@ main{
     position: absolute;
     top: 40em;
     right: 5em;
-    @media (max-width: 1024px) {
+    @media (max-width: 1105px) {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -761,6 +767,10 @@ main{
             letter-spacing: 0.01em;
             color: #93989a;
             text-align: left;
+            &:hover {
+              color: #141416;
+              transition: all 0.2s ease-in-out;
+            }
           }
           th:nth-child(1) {
             width: 260px;
@@ -805,6 +815,10 @@ main{
             width: 84px;
             height: 84px;
             margin-right: 25px;
+            &:hover{
+              transform: scale(1.05);
+              transition: all 0.2s ease-in-out;
+            }
           }
           .top-collection__table__name {
             display: inline-block;
@@ -937,6 +951,10 @@ main{
         padding: 27px;
         height: 56px;
         cursor: pointer;
+        &:hover {
+          transform: scale(1.05);
+          transition: all 0.2s ease-in-out;
+        }
         &__button {
           display: flex;
           align-items: center;
@@ -1051,7 +1069,10 @@ main{
             background: #141416;
             text-align: center;
             align-content: center;
-            &:hover {}
+            &:hover {
+              background-color: #535353;
+              transition: all 0.2s ease-in-out;
+            }
             &:active {}
             &:focus {}
           }
@@ -1170,18 +1191,20 @@ main{
           font-weight: 600;
           font-size: 16px;
           line-height: 150%;
-          text-transform: uppercase;
-          color: #fff;
-          border-radius: 16px;
           width: 150px;
           height: 57px;
+          border-radius: 16px;
+          text-transform: uppercase;
+          color: #fff;
           background: #141416;
           margin-top: 45px;
           &__button {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            justify-content: center;
             text-wrap: nowrap;
-            padding: 14px 50px;
+            padding: 14px 20px;
             font-family: var(--font-family);
             font-weight: 500;
             font-size: 14px;
@@ -1189,7 +1212,12 @@ main{
             text-transform: capitalize;
             text-align: center;
             color: #fff;
+            border-radius: 16px;
+            width: 150px;
+            height: 57px;
           &:hover {
+            background-color: #282828;
+            transition: all 0.2s ease-in-out;
           }
           &:active {
   
@@ -1315,6 +1343,7 @@ main{
                   width: 80px;
                   height: 27px;
                   background: #e6e8ec;
+                  transition: all 0.2s ease-in-out;
                 }
               }
             }
@@ -1397,7 +1426,7 @@ main{
                 }
               }
               &__percent {
-                font-family: var (--font-family);
+                font-family: var(--font-family);
                 font-weight: 400;
                 font-size: 13px;
                 line-height: 150%;
@@ -1552,7 +1581,10 @@ main{
               padding: 19px 25px;
               background: #fff;
               max-width: 190px;
-              &:hover {}
+              &:hover {
+                background-color: #93989a;
+                transition: all 0.2s ease-in-out;
+              }
               &:active {}
               &:focus {}
             }
@@ -1571,7 +1603,10 @@ main{
               border-radius: 12px;
               padding: 19px 25px;
               max-width: 183px;
-              &:hover {}
+              &:hover {
+                background-color: #282828;
+                transition: all 0.2s ease-in-out;
+              }
               &:active {}
               &:focus {}
             }
@@ -1656,7 +1691,10 @@ main{
           text-transform: capitalize;
           color: #b9b9b9;
           text-align: center;
-          &:hover {}
+          &:hover {
+            color: #fff;
+            transition: all 0.2s ease-in-out;
+          }
           &:active {}
           &:focus {}
         }
@@ -1700,6 +1738,10 @@ main{
           &:focus {}
           img {
             fill: #535353;
+            &:hover {
+              fill: #fff;
+              transition: all 0.2s ease-in-out;
+            }
           }
         }
       }
