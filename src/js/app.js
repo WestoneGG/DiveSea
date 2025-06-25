@@ -110,7 +110,7 @@ function startTimer(duration, display) {
 
 // Запуск таймера для кожної картки
 document.addEventListener("DOMContentLoaded", () => {
-  const timerDisplays = document.querySelectorAll('.explore-marketplace__card__timer'); // Вибираємо всі таймери
+  const timerDisplays = document.querySelectorAll('.explore-marketplace__cards__card__timer'); // Вибираємо всі таймери
   const duration = 25752;
 
   timerDisplays.forEach(timerDisplay => {
@@ -232,4 +232,35 @@ document.addEventListener('DOMContentLoaded', () => {
             burger.classList.remove('active');
         }
     });
+});
+
+// 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll('.article-creator__buttons__button__collection, .article-creator__buttons__button__activity');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Видаляємо клас active у всіх кнопок
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Додаємо клас active до натиснутої кнопки
+      button.classList.add('active');
+    });
+  });
+});
+
+// 
+
+document.querySelectorAll('.aside-creator__name__follow').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active'); // Додає або видаляє клас _active
+
+    // Змінюємо текст кнопки
+    if (button.classList.contains('active')) {
+      button.innerText = 'UNFOLLOW -'; // Текст при активному стані
+    } else {
+      button.innerText = 'FOLLOW +'; // Текст при неактивному стані
+    }
+  });
 });
