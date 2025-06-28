@@ -110,7 +110,7 @@ function startTimer(duration, display) {
 
 // Запуск таймера для кожної картки
 document.addEventListener("DOMContentLoaded", () => {
-  const timerDisplays = document.querySelectorAll('.explore-marketplace__cards__card__timer'); // Вибираємо всі таймери
+  const timerDisplays = document.querySelectorAll('.explore-marketplace__cards__card__timer, .article-creator__collection__cards__card__timer'); // Вибираємо всі таймери
   const duration = 25752;
 
   timerDisplays.forEach(timerDisplay => {
@@ -236,19 +236,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll('.article-creator__buttons__button__collection, .article-creator__buttons__button__activity');
+// document.addEventListener("DOMContentLoaded", () => {
+//   const buttons = document.querySelectorAll('.article-creator__buttons__button__collection, .article-creator__buttons__button__activity');
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Видаляємо клас active у всіх кнопок
-      buttons.forEach(btn => btn.classList.remove('active'));
+//   buttons.forEach(button => {
+//     button.addEventListener('click', () => {
+//       // Видаляємо клас active у всіх кнопок
+//       buttons.forEach(btn => btn.classList.remove('active'));
 
-      // Додаємо клас active до натиснутої кнопки
-      button.classList.add('active');
-    });
-  });
-});
+//       // Додаємо клас active до натиснутої кнопки
+//       button.classList.add('active');
+//     });
+//   });
+// });
 
 // 
 
@@ -262,5 +262,45 @@ document.querySelectorAll('.aside-creator__name__follow').forEach(button => {
     } else {
       button.innerText = 'FOLLOW +'; // Текст при неактивному стані
     }
+  });
+});
+
+// Перемикання контенту між колекціями та активностями в Article Creator
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll('.article-creator__buttons__button__collection, .article-creator__buttons__button__activity');
+  const collectionContent = document.querySelector('.article-creator__collection');
+  const activityContent = document.querySelector('.article-creator__activity');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Видаляємо клас active у всіх кнопок
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Додаємо клас active до натиснутої кнопки
+      button.classList.add('active');
+
+      // Перемикаємо контент
+      if (button.classList.contains('article-creator__buttons__button__collection')) {
+        collectionContent.classList.add('active');
+        activityContent.classList.remove('active');
+      } else if (button.classList.contains('article-creator__buttons__button__activity')) {
+        activityContent.classList.add('active');
+        collectionContent.classList.remove('active');
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(".sell__form__aside__toggle__item__slider");
+
+  sliders.forEach(slider => {
+    slider.addEventListener("click", () => {
+      const checkbox = slider.previousElementSibling;
+      checkbox.checked = !checkbox.checked;
+
+      console.log(`Checkbox ${checkbox.id} is now ${checkbox.checked ? "checked" : "unchecked"}`);
+    });
   });
 });

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell</title>
+</head>
+<body>
+    <div class="wrapper">
+        @@include('header.htm')
+        <div class="sell">
+            <div class="sell__container">
+                <h1>Create Your NFT</h1>
+                <form class="sell__form" action="/submit-sell" method="post">
+                    <div class="sell__form__aside">
+                        <label class="sell__form__aside__label" for="item-name">Name</label>
+                        <input type="text" id="item-name" name="item_name" placeholder="ArtWork Name" required>
+
+                        <label class="sell__form__aside__label" for="item-description">Description</label>
+                        <textarea id="item-description" name="item_description" required placeholder="Enter Your Description"></textarea>
+
+                        <label class="sell__form__aside__label" for="item-royalty">Royalty</label>
+                        <input type="number" id="item-royalty" name="item_royalty" min="0" max="100" placeholder="Royalty" required>
+
+                        <label class="sell__form__aside__label" for="item-size">Size</label>
+                        <input type="text" id="item-size" name="item_size" placeholder="Ex - 100 x 100" required>
+
+                        <label class="sell__form__aside__label" for="item-tags">Tags</label>
+                        <input type="text" id="item-tags" name="item_tags" placeholder="Beautiful Castle, Monkeys ETC" required>
+
+                        <label class="sell__form__aside__label" for="item-price">Price</label>
+                        <input type="number" id="item-price" name="item_price" placeholder="0.00007 ETC" required>
+
+                        <label class="sell__form__aside__label" for="item-stock">In Stock</label>
+                        <input type="number" id="item-stock" name="item_stock" min="1" placeholder="001" required>
+
+                        <div class="sell__form__aside__toggle">
+                            <div class="sell__form__aside__toggle__item">
+                              <label class="sell__form__aside__toggle__item__label" for="item-put-on-sale">Put On Sale</label>
+                              <input type="checkbox" id="item-put-on-sale" name="item_put_on_sale" class="sell__form__aside__toggle__item__checkbox">
+                              <span class="sell__form__aside__toggle__item__slider"></span>
+                              <p class="sell__form__aside__toggle__item__description">People Will Bids On Your NFT Project</p>
+                            </div>
+                            <div class="sell__form__aside__toggle__item">
+                              <label class="sell__form__aside__toggle__item__label" for="item-direct-sale">Direct Sale</label>
+                              <input type="checkbox" id="item-direct-sale" name="item_direct_sale" class="sell__form__aside__toggle__item__checkbox">
+                              <span class="sell__form__aside__toggle__item__slider"></span>
+                              <p class="sell__form__aside__toggle__item__description">No Bids - Only Direct Selling</p>
+                            </div>
+                          </div>
+
+                        <button class="sell__form__aside__create" type="submit">Create</button>
+                    </div>
+                    <div class="sell__form__article">    
+                        <label class="sell__form__article__label" for="item-image">Upload File</label>
+                        <div class="sell__form__article__upload">
+                            <input type="file" id="item-image" name="item_image" accept="image/png, image/gif, image/webp, video/mp4, audio/mp3" required>
+                            <div class="sell__form__article__upload__preview">
+                                <img src="img/uploadicon.svg" alt="Upload Icon">
+                                <p>PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.</p>
+                            </div>
+                        </div>
+                        <button class="sell__form__article__upload">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @@include('footer.htm')
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+</html>
